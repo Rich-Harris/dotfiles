@@ -12,7 +12,9 @@ set number
 set cursorline
 
 " Make tabs as wide as two spaces
+set shiftwidth=2
 set tabstop=2
+set smartindent
 
 " tree view
 let g:netrw_liststyle=3
@@ -28,3 +30,13 @@ set mouse=a
 
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+
+" autocomplete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
+" base-style autocomplete filenames
+set wildmenu
+set wildmode=longest:full,full
