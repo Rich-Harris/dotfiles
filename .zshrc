@@ -1,8 +1,6 @@
 release () {
     # there's probably a better way to do this
-    VERSIONLINE="$(cat $PWD/package.json | grep version)"
-    RIGHT=${VERSIONLINE#'  "version": "'}
-    VERSION=${RIGHT%'",'}
+    VERSION="$(npm pkg get version | sed 's/"//g')"
     echo "Releasing $VERSION..."
 
     echo "Press enter to commit changes..."
