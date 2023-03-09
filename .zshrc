@@ -32,4 +32,5 @@ tempdir () {
     echo "run ./cleanup.sh to empty this directory once you're finished"
 }
 
-PROMPT="%(?:%{%}➜ :%{%}➜ ) %{$fg[cyan]%}%2d%{$reset_color%} $(git_prompt_info)"
+PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT+=' %{$fg[cyan]%}%2d%{$reset_color%} $(git_prompt_info)'
